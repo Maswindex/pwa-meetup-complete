@@ -1,0 +1,20 @@
+{
+  "short_name": "2048",
+  "name": "2048",
+  "icons": [
+    {
+      "src": "images/app_icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },{
+      "src": "images/app_icon_large.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#EDE0C8",
+  "display": "standalone",
+  "scope": "/pwa-meetup-complete",
+  "theme_color": "#5C6BC0"
+}

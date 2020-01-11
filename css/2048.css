@@ -1,0 +1,67 @@
+html, body {
+    height: 100%;
+}
+
+.size- {
+    background-color: #BCEDEE;
+    box-shadow: inset 0 0 8px #000000;
+}
+.size-2 {
+    background-color: #A2E6E8;
+    font-size: 60px;
+    box-shadow: 0 8px 6px -6px black;
+}
+.size-4 {
+    background-color: #7ADCDE;
+    font-size: 60px;
+    box-shadow: 0 8px 6px -6px black;
+}
+.size-8 {
+    background-color: #64C6C8;
+    font-size: 60px;
+    box-shadow: 0 8px 6px -6px black;
+}
+.size-16 {
+    background-color: #3C7778;
+    color: white;
+    font-size: 50px;
+    box-shadow: 0 8px 6px -6px black;
+}
+.size-32 {
+    background-color: #284F50;
+    color: white;
+    font-size: 50px;
+    box-shadow: 0 8px 6px -6px black;
+}
+.size-64 {
+    background-color: #1E3c3c;
+    color: white;
+    font-size: 50px;
+    box-shadow: 0 8px 6px -6px black;
+}
+.size-128 {
+    background-color: #DFFF81;
+    font-size: 42px;
+    box-shadow: 0 8px 6px -6px black;
+}
+.size-256 {
+    background-color: #D8FF66;
+    font-size: 42px;
+    box-shadow: 0 8px 6px -6px black;
+}
+.size-512 {
+    background-color: #B1D154;
+    font-size: 42px;
+    box-shadow: 0 8px 6px -6px black;
+}
+.size-1024 {
+    background-color: #8AA341;
+    font-size: 32px;
+    box-shadow: 0 8px 6px -6px black;
+}
+.size-2048 {
+    background-color: #3B461C;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 8px 6px -6px black;
+}

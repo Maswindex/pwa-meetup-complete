@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport'
+          content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+<!-- Editing begins here -->
+
+    <meta name="theme-color" content="#5C6BC0">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+<!--  Editing ends here  -->
+
+    <!-- Font Awesome -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
+
+    <!-- Bootstrap core CSS -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+
+    <!-- Material Design Bootstrap -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css' rel='stylesheet'>
+    <link href='/css/2048.css' rel='stylesheet'>
+
+    <title>2048</title>
+</head>
+<body>
+
+<div class='container-fluid text-center h-100'>
+    <div id='brick' class='row content justify-content-center align-items-center h-100 p-2 bg-dark'>
+        <div id="app" class='col-11 col-sm-8 col-md-6 col-lg-3 p-1 indigo lighten-1 rounded-lg container'>
+            <div class="bg-success rounded-lg mb-3">
+                <h3>Score: {{ score }}</h3>
+            </div>
+
+            <!--loop-->
+            <div v-for="row in cubes" class="row justify-content-around w-100 m-0 p-0">
+                <div v-for="item in row" class="col-3 cube rounded-lg align-items-center m-0 p-1 ">
+                    <h6 class="size-2048 rounded-lg py-4 m-0 h-100"
+                        v-if="item.value > 1024">{{item.value}}</h6>
+                    <h6 class="size-1024 rounded-lg py-4 m-0 h-100"
+                        v-else-if="item.value > 512">{{item.value}}</h6>
+                    <h6 class="size-512 rounded-lg py-3 m-0 h-100"
+                        v-else-if="item.value > 256">{{item.value}}</h6>
+                    <h6 class="size-256 rounded-lg py-3 m-0 my-auto h-100"
+                        v-else-if="item.value > 128">{{item.value}}</h6>
+                    <h6 class="size-128 rounded-lg m-0 py-3 h-100"
+                        v-else-if="item.value > 64">{{item.value}}</h6>
+                    <h6 class="size-64 rounded-lg py-3 m-0 h-100"
+                        v-else-if="item.value > 32">{{item.value}}</h6>
+                    <h6 class="size-32 rounded-lg py-3 m-0 h-100"
+                        v-else-if="item.value > 16">{{item.value}}</h6>
+                    <h6 class="size-16 rounded-lg py-3 m-0 h-100"
+                        v-else-if="item.value > 8">{{item.value}}</h6>
+                    <h6 class="size-8 rounded-lg py-2 m-0 h-100"
+                        v-else-if="item.value > 4">{{item.value}}</h6>
+                    <h6 class="size-4 rounded-lg py-2 m-0 h-100"
+                        v-else-if="item.value > 2">{{item.value}}</h6>
+                    <h6 class="size-2 rounded-lg py-2 m-0 h-100"
+                        v-else-if="item.value > 0">{{item.value}}</h6>
+                    <h6 class="size- indigo lighten-3 rounded-lg m-0 h-100"
+                        v-else> </h6>
+                </div>
+            </div>
+
+            <div id="arrow-keys" class="row p-0 w-100 m-0 mt-3 rounded-lg">
+                <div id="left-arrow-container" class="col-2 m-0 p-1 rounded-lg h-100">
+                    <button v-on:click="key_pressed(37)" id="left-arrow" class="btn m-0 btn-warning h-100 w-100 rounded-lg p-2">
+                        <img  class="h-100 w-100" src="/images/left_arrow.png" alt="Left Arrow">
+                    </button>
+                </div>
+                <div id="center-arrow-container" class="col-8 m-0 p-0 h-100">
+                    <div id="up-arrow-container" class="w-100 h-50 m-0 p-1">
+                        <button id="up-arrow" v-on:click="key_pressed(38)"
+                                class="btn m-0 btn-warning h-100 w-100 rounded-lg px-4 py-2">
+                            <img class="w-100 h-100" src="/images/up_arrow.png" alt="Up Arrow">
+                        </button>
+                    </div>
+                    <div id="down-arrow-container" class="w-100 h-50 m-0 p-1">
+                        <button id="down-arrow" v-on:click="key_pressed(40)"
+                                class="btn m-0 btn-warning h-100 w-100 rounded-lg px-4 py-2">
+                            <img class="w-100 h-100" src="/images/down_arrow.png" alt="Down Arrow">
+                        </button>
+                    </div>
+                </div>
+                <div id="right-arrow-container" class="col-2 m-0 p-1 h-100">
+                    <button v-on:click="key_pressed(39)" id="right-arrow" class="btn m-0 btn-warning h-100 w-100 rounded-lg p-2">
+                        <img  class="h-100 w-100" src="/images/right_arrow.png" alt="Right Arrow">
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript'
+        src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script type='text/javascript'
+        src='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vue'></script>
+
+<script src="js/2048.js"></script>
+
+<script src="js/app.js"></script>
+</body>
+</html>
